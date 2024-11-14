@@ -1,7 +1,11 @@
-import * as admin from "firebase-admin";
+import admin from "firebase-admin";
 
 if (!admin.apps.length) {
-  const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY!);
+  console.log(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
+  const serviceAccount = JSON.parse(
+    process.env.FIREBASE_SERVICE_ACCOUNT_KEY as string
+  );
+  console.log(serviceAccount);
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
     projectId: "solidify-9f2c4",
