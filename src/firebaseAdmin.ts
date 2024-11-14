@@ -1,6 +1,7 @@
 import admin from "firebase-admin";
 
 if (!admin.apps.length) {
+  console.log("fdas");
   console.log(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
   const serviceAccount = JSON.parse(
     process.env.FIREBASE_SERVICE_ACCOUNT_KEY as string
