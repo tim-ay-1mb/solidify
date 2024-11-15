@@ -1363,4 +1363,359 @@ export default [
       },
     ],
   },
+  {
+    title: "SolidJS Conditional Rendering Quiz: Can You Render the Truth? 🤔",
+    slug: "solidjs-conditional-rendering-quiz",
+    description:
+      "Think you've mastered the art of SolidJS conditional rendering? 🤔  Get ready to dive deep into the world of `<Show>`, `<Switch>`, `<Match>`, and maybe even some ternary operators (if you dare).  This quiz will challenge your knowledge and reveal if you can truly render the truth! ✨",
+    difficulty: 4,
+    questionCount: 10,
+    questions: [
+      {
+        difficulty: 1,
+        tag: "Conditional Rendering",
+        question:
+          "You want to display a loading spinner while fetching data. Which Solid.js component is best suited for this?",
+        options: [
+          {
+            text: "`<Show>`",
+            correct: true,
+            explanation:
+              "The `<Show>` component is ideal for conditionally rendering elements based on a boolean value, like whether the data is still loading.",
+          },
+          {
+            text: "`<Switch>`",
+            correct: false,
+            explanation:
+              "The `<Switch>` component is better for handling multiple conditional outcomes, not just a simple true/false scenario.",
+          },
+          {
+            text: "`<Match>`",
+            correct: false,
+            explanation:
+              "The `<Match>` component is used within a `<Switch>` block and is not suitable for standalone conditional rendering.",
+          },
+          {
+            text: "`<For>`",
+            correct: false,
+            explanation:
+              "The `<For>` component is designed for rendering lists and is not relevant to conditional rendering.",
+          },
+        ],
+      },
+      {
+        difficulty: 2,
+        tag: "State Management",
+        question:
+          "You have a list of tasks. How would you efficiently store and update the number of completed tasks in a Solid.js application?",
+        options: [
+          {
+            text: "Use a separate signal for completed tasks and update it manually.",
+            correct: false,
+            explanation:
+              "While possible, this can lead to manual updates and potential inconsistencies.",
+          },
+          {
+            text: "Derive the count of completed tasks using a memo.",
+            correct: true,
+            explanation:
+              "A memo will efficiently recalculate the count only when the underlying tasks change.",
+          },
+          {
+            text: "Store the count in a separate variable and update it whenever a task changes.",
+            correct: false,
+            explanation: "This can lead to errors and is not reactive.",
+          },
+          {
+            text: "Use the browser's local storage to keep track of the count.",
+            correct: false,
+            explanation:
+              "Local storage is for persistence, not for managing the application's internal state.",
+          },
+        ],
+      },
+      {
+        difficulty: 3,
+        tag: "Conditional Rendering",
+        question:
+          "You want to render different components based on the user's role: 'admin', 'editor', or 'viewer'. What's the most efficient way to do this in Solid.js?",
+        options: [
+          {
+            text: "Nest multiple `<Show>` components for each role.",
+            correct: false,
+            explanation:
+              "Nesting can become cumbersome when you have many roles to handle.",
+          },
+          {
+            text: "Use a `<Switch>` component with a `<Match>` for each role.",
+            correct: true,
+            explanation:
+              "This provides a clean and readable structure for handling multiple conditions.",
+          },
+          {
+            text: "Use a ternary operator within a single JSX element.",
+            correct: false,
+            explanation:
+              "While possible for simple cases, it can become less readable with many roles.",
+          },
+          {
+            text: "Create a separate component for each role and conditionally render them.",
+            correct: false,
+            explanation:
+              "This can lead to unnecessary component overhead and might not be the most efficient approach.",
+          },
+        ],
+      },
+      {
+        difficulty: 4,
+        tag: "State Management",
+        question:
+          "You have a complex form with nested data. How would you structure the state in Solid.js to make it easy to manage and update?",
+        options: [
+          {
+            text: "Use a single signal with a deeply nested object.",
+            correct: false,
+            explanation:
+              "While possible, updating deeply nested objects can become cumbersome.",
+          },
+          {
+            text: "Use separate signals for each field in the form.",
+            correct: false,
+            explanation:
+              "This can lead to a large number of signals and make it harder to manage related data.",
+          },
+          {
+            text: "Use a store to organize the form data in a structured way.",
+            correct: true,
+            explanation:
+              "Stores provide a way to group related data and update it efficiently using paths and the `produce` utility.",
+          },
+          {
+            text: "Store the form data in a global variable and update it directly.",
+            correct: false,
+            explanation:
+              "Global variables are not reactive and can lead to unexpected behavior in a Solid.js application.",
+          },
+        ],
+      },
+      {
+        difficulty: 5,
+        tag: "State Management & Context",
+        question:
+          "You are building a shopping cart application with multiple components that need access to the cart's contents. How would you share the cart state efficiently in Solid.js?",
+        options: [
+          {
+            text: "Pass the cart state as props through all the components.",
+            correct: false,
+            explanation:
+              "This can lead to prop drilling and make the code harder to maintain.",
+          },
+          {
+            text: "Store the cart state in a global variable and access it directly.",
+            correct: false,
+            explanation:
+              "Global variables are not reactive and can lead to issues in a Solid.js application.",
+          },
+          {
+            text: "Use a store to manage the cart state and pass the store as props.",
+            correct: false,
+            explanation:
+              "While stores are good for state management, passing them as props can still lead to prop drilling.",
+          },
+          {
+            text: "Use a context to provide the cart state to all components within a subtree.",
+            correct: true,
+            explanation:
+              "Context allows you to share the cart state without manually passing it down as props, making the components more independent and reusable.",
+          },
+        ],
+      },
+      {
+        difficulty: 5,
+        tag: "Conditional Rendering",
+        question:
+          "You are building a complex dashboard with multiple sections that can be shown or hidden based on user roles and preferences. What is the most efficient way to handle the conditional rendering of these sections in SolidJS?",
+        options: [
+          {
+            text: "Use nested `<Show>` components for each condition.",
+            correct: false,
+            explanation:
+              "While possible, nested `<Show>` components can become unwieldy and difficult to manage for complex conditions.",
+          },
+          {
+            text: "Use a combination of `<Switch>` and `<Match>` components to handle the different conditions.",
+            correct: true,
+            explanation:
+              "This approach provides a structured and readable way to handle multiple conditions, similar to a switch/case statement in JavaScript.",
+          },
+          {
+            text: "Use a ternary operator within JSX to conditionally render each section.",
+            correct: false,
+            explanation:
+              "Ternary operators can be useful for simple conditions, but they can become less readable for complex logic.",
+          },
+          {
+            text: "Manually manipulate the DOM using JavaScript to show or hide sections.",
+            correct: false,
+            explanation:
+              "Direct DOM manipulation is generally discouraged in SolidJS as it can interfere with the reactivity system.",
+          },
+        ],
+      },
+      {
+        difficulty: 5,
+        tag: "State Management",
+        question:
+          "You have a deeply nested component tree in your SolidJS application. You need to share a complex state object, containing user authentication status, shopping cart items, and notification preferences, across various components at different levels. What is the most effective and maintainable approach to achieve this?",
+        options: [
+          {
+            text: "Pass the state object as props through each level of the component tree (prop drilling).",
+            correct: false,
+            explanation:
+              "Prop drilling can lead to verbose code, making it difficult to track and manage state changes.",
+          },
+          {
+            text: "Create multiple independent signals for each piece of state (e.g., `user`, `cart`, `notifications`) and pass them individually.",
+            correct: false,
+            explanation:
+              "Managing multiple independent signals can become cumbersome and may lead to inconsistencies.",
+          },
+          {
+            text: "Use a single, global JavaScript object to store the state and access it directly from any component.",
+            correct: false,
+            explanation:
+              "Global variables can make it difficult to reason about state changes and can lead to unintended side effects.",
+          },
+          {
+            text: "Utilize SolidJS Context API to create a `UserContext` and provide the state object to the descendant components.",
+            correct: true,
+            explanation:
+              "Context API provides an elegant solution for sharing state across components without prop drilling, promoting better organization and maintainability.",
+          },
+        ],
+      },
+      {
+        difficulty: 5,
+        tag: "State Management with Stores",
+        question:
+          "You are building an e-commerce application with a shopping cart feature. The cart needs to manage a list of items, their quantities, and calculate the total price. You choose to use SolidJS stores for state management. How would you efficiently update the cart state when a user changes the quantity of an item?",
+        options: [
+          {
+            text: "Directly modify the `quantity` property of the corresponding item object within the store.",
+            correct: false,
+            explanation:
+              "Directly modifying the store object can lead to unexpected behavior and break reactivity.",
+          },
+          {
+            text: "Use `setState` with a callback function to access the previous state and update the `quantity` property of the specific item.",
+            correct: false,
+            explanation:
+              "While this approach works, it might require iterating through the items array and can be less efficient for frequent updates.",
+          },
+          {
+            text: "Use `setState` with the `produce` utility to immutably update the `quantity` of the target item.",
+            correct: true,
+            explanation:
+              "`produce` simplifies the process of updating nested properties within the store while ensuring immutability and preserving reactivity.",
+          },
+          {
+            text: "Create separate signals for each item in the cart and manage their quantities individually.",
+            correct: false,
+            explanation:
+              "Managing individual signals for each item can become inefficient and difficult to scale as the cart grows.",
+          },
+        ],
+      },
+      {
+        difficulty: 5,
+        tag: "Conditional Rendering with Derived State",
+        question:
+          "You are designing a user profile page where certain sections (e.g., 'Edit Profile,' 'Change Password') should only be visible if the logged-in user's ID matches the profile being viewed. How would you implement this conditional rendering logic in SolidJS?",
+        options: [
+          {
+            text: "Fetch the user ID within each section's component and use a `<Show>` component to conditionally render it based on the ID comparison.",
+            correct: false,
+            explanation:
+              "Fetching the user ID within each component can lead to redundant data requests and potential performance issues.",
+          },
+          {
+            text: "Store the logged-in user's ID and the profile's ID in separate signals, and use a derived signal to compute whether they match. Use this derived signal in the `<Show>` component's `when` prop.",
+            correct: true,
+            explanation:
+              "This approach efficiently calculates the condition once and reactively updates the UI when either the logged-in user's ID or the profile's ID changes.",
+          },
+          {
+            text: "Pass both IDs as props to each section component and let them handle the conditional rendering logic internally.",
+            correct: false,
+            explanation:
+              "Passing IDs as props can lead to prop drilling and make the code less maintainable.",
+          },
+          {
+            text: "Use a global variable to store the logged-in user's ID and compare it with the profile's ID within each section's component.",
+            correct: false,
+            explanation:
+              "Global variables can make it difficult to track state changes and can lead to unintended side effects.",
+          },
+        ],
+      },
+      {
+        difficulty: 5,
+        tag: "Dynamic Conditional Rendering",
+        question:
+          "You are tasked with building a notification system where the type of notification (success, error, warning) determines its appearance (color, icon). You have an array of notification objects, each with a `type` property. How would you efficiently render these notifications with the appropriate styling in SolidJS?",
+        options: [
+          {
+            text: "Use a `<Switch>` component with a `<Match>` for each notification type, applying the corresponding styles within each `Match`.",
+            correct: true,
+            explanation:
+              "This approach provides a clear and organized way to handle different notification types and their respective styles.",
+          },
+          {
+            text: "Use a `<For>` loop to iterate over the notifications and apply inline styles based on the `type` property using a ternary operator.",
+            correct: false,
+            explanation:
+              "While this works, inline styles can become difficult to manage and maintain, especially for complex styling rules.",
+          },
+          {
+            text: "Create separate components for each notification type and dynamically render the appropriate component based on the `type` property.",
+            correct: false,
+            explanation:
+              "Creating separate components for each type can lead to code duplication and might be overkill for simple styling variations.",
+          },
+          {
+            text: "Use a CSS-in-JS library to define dynamic styles based on the notification type and apply them to a common notification component.",
+            correct: false,
+            explanation:
+              "While CSS-in-JS can be powerful, it might add unnecessary complexity for this specific scenario.",
+          },
+        ],
+      },
+    ],
+    result: [
+      {
+        score: [0, 2],
+        title: "Conditional Rendering Rookie 😅",
+        feedback:
+          "Looks like you're just starting your journey with SolidJS conditional rendering. Don't worry, keep exploring and you'll be a rendering master in no time! 💪",
+      },
+      {
+        score: [3, 4],
+        title: "Conditional Rendering Apprentice 🤔",
+        feedback:
+          "You've got a good grasp of the basics! Keep practicing and experimenting to become a true conditional rendering expert. 🤓",
+      },
+      {
+        score: [6, 8],
+        title: "Conditional Rendering Pro 😎",
+        feedback:
+          "Impressive! You've clearly spent some time with SolidJS conditional rendering and it shows. You're well on your way to mastering the art of dynamic UIs. 🎉",
+      },
+      {
+        score: [9, 10],
+        title: "Conditional Rendering Grandmaster 🤯",
+        feedback:
+          "Wow! You're a SolidJS conditional rendering wizard! 🧙‍♂️ Your understanding of `<Show>`, `<Switch>`, and `<Match>` is truly remarkable. You can render anything! 🌟",
+      },
+    ],
+  },
 ] as Challenge[];

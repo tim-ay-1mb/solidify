@@ -23,6 +23,10 @@ This project provides a platform for Solid-JS developers to test their knowledge
 3. **Answer the questions** to the best of your ability.
 4. **Review your results** and identify areas for improvement.
 
+**Disclaimer**
+
+Disclaimer: I'm using the Gemini 1.5 Flash model (with its free usage limitations) to create these questions based on official documentation.  Therefore, the accuracy and validity of both questions and answers may vary and aren't fully verified. Please use your own judgment when considering the information provided.  If you encounter any problematic questions, feel free to report them to [tim.ay.1mb@gmail.com](tim.ay.1mb@gmail.com)
+
 **Author**
 
 Tim Au Yeung
