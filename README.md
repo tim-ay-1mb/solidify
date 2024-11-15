@@ -1,33 +1,34 @@
-# SolidStart
+# SolidIFY - Test Your Solid-JS Skills!
 
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
+**Are you curious about your Solid-JS skills?**  Take our challenges to get a clear picture of your strengths and weaknesses.
 
-## Creating a project
+This project provides a platform for Solid-JS developers to test their knowledge and identify areas for improvement. Whether you're a beginner or an experienced developer, SolidIFY can help you solidify your understanding of Solid-JS fundamentals.
 
-```bash
-# create a new project in the current directory
-npm init solid@latest
+**Here's how it works:**
 
-# create a new project in my-app
-npm init solid@latest my-app
-```
+* **Identify Knowledge Gaps:** Pinpoint the areas where you need to focus your learning. Our challenges help you identify specific Solid-JS concepts you might be missing.
+* **Build a Strong Foundation:** Use the challenge results to create a targeted learning plan and solidify your understanding of Solid-JS fundamentals.
 
-## Developing
+**Features:**
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+* **Daily Challenges:**  Test your skills with a new Solid-JS challenge every day.
+* **Start Challenge!**:  Begin a comprehensive Solid-JS challenge to assess your overall knowledge.
+* **Today's Question**:  Quickly test yourself with a single Solid-JS question.
+* **Progress Tracking:** (This could be a potential feature) Track your performance over time and see your improvement.
+* **Detailed Explanations:** (This could be a potential feature) Get clear explanations and learn from your mistakes.
 
-```bash
-npm run dev
+**Getting Started:**
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+1. **Visit the website:** [Solidify](https://solidify-lilac.vercel.app/)
+3. **Answer the questions** to the best of your ability.
+4. **Review your results** and identify areas for improvement.
 
-## Building
+**Author**
 
-Solid apps are built with _presets_, which optimise your project for deployment to different environments.
+Tim Au Yeung
 
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different preset, add it to the `devDependencies` in `package.json` and specify in your `app.config.js`.
+A developer from Hong Kong passionate about frontend development and building valuable tools for the community. 
 
-## This project was created with the [Solid CLI](https://solid-cli.netlify.app)
-# solidify
+**License**
+
+MIT © [Tim Au Yeung](https://github.com/tim-ay-1mb)
