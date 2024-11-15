@@ -1,6 +1,10 @@
 {
-  "name": "example-with-tailwindcss",
+  "name": "solidify",
   "type": "module",
+  "version": "1.0.0",
+  "description": "A quiz platform to solidify your SolidJS knowledge.",
+  "license": "MIT",
+  "author": "Tim Au Yeung",
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
