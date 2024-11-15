@@ -722,4 +722,645 @@ export default [
       },
     ],
   },
+  {
+    title: "SolidJS Reactivity Quiz: Test Your Skills! 🧠",
+    slug: "solidjs-reactivity-quiz",
+    description:
+      "Think you know SolidJS reactivity? 🤔 Take this quiz and put your knowledge to the test! 🏆 From signals and effects to memos and resources, see how well you understand the magic behind Solid's fine-grained updates. ✨",
+    difficulty: 2, // Adjusted based on the questions
+    questionCount: 10,
+    questions: [
+      {
+        difficulty: 1, // Easy
+        tag: "signals",
+        question: "What is the primary function of a signal in SolidJS?",
+        options: [
+          {
+            text: "To store and update data within a component.",
+            correct: true,
+            explanation:
+              "Signals act as containers for values that can change over time, triggering updates in the UI.",
+          },
+          {
+            text: "To define a function that will be executed when a button is clicked.",
+            correct: false,
+            explanation:
+              "Signals are not directly related to event handling or button clicks.",
+          },
+          {
+            text: "To fetch data from an external API.",
+            correct: false,
+            explanation:
+              "While signals can hold fetched data, their role is not specifically to fetch it.",
+          },
+        ],
+      },
+      {
+        difficulty: 2, // Medium
+        tag: "effects",
+        question: "What is the purpose of the `createEffect` function?",
+        options: [
+          {
+            text: "To create a signal that depends on other signals.",
+            correct: false,
+            explanation:
+              "This describes a computed signal or memo, not an effect.",
+          },
+          {
+            text: "To define a function that will be executed only once when the component is initialized.",
+            correct: false,
+            explanation:
+              "Effects can execute multiple times whenever their dependencies change.",
+          },
+          {
+            text: "To create a side effect that will re-run whenever its dependent signals change.",
+            correct: true,
+            explanation:
+              "Effects automatically track their dependencies and re-execute when those change.",
+          },
+        ],
+      },
+      {
+        difficulty: 2, // Medium
+        tag: "state-management",
+        question: "How do you update the value of a signal?",
+        context:
+          "You have a signal called `count` created with `createSignal(0)`.",
+        options: [
+          {
+            text: "By directly assigning a new value: `count = 5`",
+            correct: false,
+            explanation:
+              "Signals require their setter function to update the value.",
+          },
+          {
+            text: "By using the setter function: `setCount(5)`",
+            correct: true,
+            explanation:
+              "The setter function notifies the reactive system about the change.",
+          },
+          {
+            text: "By modifying the signal's internal state.",
+            correct: false,
+            explanation:
+              "You should not directly manipulate the signal's internal state.",
+          },
+        ],
+      },
+      {
+        difficulty: 1, // Easy
+        tag: "subscribers",
+        question: "What is a subscriber in the context of SolidJS reactivity?",
+        options: [
+          {
+            text: "A function that listens for changes in a signal.",
+            correct: true,
+            explanation:
+              "Subscribers are automatically notified when a signal they depend on changes.",
+          },
+          {
+            text: "A variable that stores the current value of a signal.",
+            correct: false,
+            explanation: "This describes the signal itself.",
+          },
+          {
+            text: "A component that displays the value of a signal.",
+            correct: false,
+            explanation:
+              "While components can display signal values, they are not the core definition of a subscriber.",
+          },
+        ],
+      },
+      {
+        difficulty: 2, // Medium
+        tag: "effects",
+        question:
+          "What happens when you access a signal within a `createEffect` function?",
+        options: [
+          {
+            text: "The effect will re-run whenever any signal in the component updates.",
+            correct: false,
+            explanation:
+              "Effects only re-run when the signals they directly depend on are updated.",
+          },
+          {
+            text: "The effect becomes a subscriber to that specific signal.",
+            correct: true,
+            explanation:
+              "The effect establishes a dependency on the signal and will re-execute when that signal changes.",
+          },
+          {
+            text: "The signal's value will be logged to the console.",
+            correct: false,
+            explanation:
+              "Accessing a signal simply reads its value; it doesn't inherently cause logging.",
+          },
+        ],
+      },
+      {
+        difficulty: 3, // Medium
+        tag: "memos",
+        question: "What is the key difference between a memo and an effect?",
+        options: [
+          {
+            text: "Memos are synchronous, while effects are asynchronous.",
+            correct: false,
+            explanation: "Both memos and effects can operate synchronously.",
+          },
+          {
+            text: "Memos return a value, while effects do not.",
+            correct: true,
+            explanation: "Memos are derived signals that cache their results.",
+          },
+          {
+            text: "Memos are used for UI updates, while effects are used for side effects.",
+            correct: false,
+            explanation: "Both can influence the UI or perform side effects.",
+          },
+        ],
+      },
+      {
+        difficulty: 3, // Medium
+        tag: "resources",
+        question:
+          "How do resources help manage asynchronous operations in SolidJS?",
+        options: [
+          {
+            text: "They convert asynchronous data into a synchronous signal.",
+            correct: true,
+            explanation:
+              "This simplifies tracking and updating based on async results.",
+          },
+          {
+            text: "They provide a way to delay the execution of effects.",
+            correct: false,
+            explanation:
+              "Delaying effects is not the primary function of resources.",
+          },
+          {
+            text: "They prevent race conditions when multiple signals update.",
+            correct: false,
+            explanation: "Race conditions are a separate concern.",
+          },
+        ],
+      },
+      {
+        difficulty: 2, // Medium
+        tag: "effects",
+        question: "What is the purpose of the `on` function within an effect?",
+        options: [
+          {
+            text: "To define a cleanup function that runs when the effect is disposed.",
+            correct: false,
+            explanation:
+              "Cleanup is handled by returning a function from the effect.",
+          },
+          {
+            text: "To manually specify the dependencies of the effect.",
+            correct: true,
+            explanation:
+              "This is useful for controlling when the effect re-executes.",
+          },
+          {
+            text: "To create a nested effect within another effect.",
+            correct: false,
+            explanation: "Nested effects don't require the `on` function.",
+          },
+        ],
+      },
+      {
+        difficulty: 3, // Difficult
+        tag: "synchronicity",
+        question:
+          "Why is it important that SolidJS reactivity is synchronous by default?",
+        options: [
+          {
+            text: "To prevent race conditions when updating multiple signals.",
+            correct: false,
+            explanation:
+              "While synchronous behavior can help, race conditions are a broader issue.",
+          },
+          {
+            text: "To ensure that updates happen in a predictable order.",
+            correct: true,
+            explanation:
+              "This is crucial for maintaining consistency when updates depend on each other.",
+          },
+          {
+            text: "To maximize performance by avoiding unnecessary re-renders.",
+            correct: false,
+            explanation:
+              "Performance is a factor, but the primary reason is predictability.",
+          },
+        ],
+      },
+      {
+        difficulty: 3, // Difficult
+        tag: "batching",
+        question: "What is the role of the `batch` function in SolidJS?",
+        options: [
+          {
+            text: "To group multiple signal updates into a single reactive update.",
+            correct: true,
+            explanation:
+              "This can prevent intermediate re-renders and improve efficiency.",
+          },
+          {
+            text: "To create a new reactive scope within a component.",
+            correct: false,
+            explanation:
+              "Reactive scopes are not created using the `batch` function.",
+          },
+          {
+            text: "To define a function that will be executed asynchronously.",
+            correct: false,
+            explanation:
+              "Asynchronous behavior is not the main purpose of `batch`.",
+          },
+        ],
+      },
+    ],
+    result: [
+      {
+        score: [0, 3],
+        title: "Reactivity Rookie 😅",
+        feedback:
+          "Looks like you're just starting your SolidJS reactivity journey. Don't worry, keep exploring and you'll master it in no time! 💪",
+      },
+      {
+        score: [4, 6],
+        title: "Reactivity Apprentice 🤔",
+        feedback:
+          "You've got a good grasp of the basics! Keep practicing and experimenting to become a true reactivity expert. 🤓",
+      },
+      {
+        score: [7, 8],
+        title: "Reactivity Pro 😎",
+        feedback:
+          "Impressive! You've clearly spent some time with SolidJS reactivity and it shows. You're well on your way to mastering the art of fine-grained updates. 🎉",
+      },
+      {
+        score: [9, 10],
+        title: "Reactivity Grandmaster 🤯",
+        feedback:
+          "Wow! You're a SolidJS reactivity wizard! 🧙‍♂️ Your understanding of signals, effects, and the reactive system is truly remarkable. 🌟",
+      },
+    ],
+  },
+  {
+    title: "SolidJS Routing Quiz: Navigate Your Knowledge! 🧭",
+    slug: "solidjs-routing-quiz",
+    description:
+      "Think you've mastered the ins and outs of SolidJS routing? 🤔  Put your skills to the test with this quiz! 🏆 From basic route definitions and dynamic parameters to lazy loading and preloading, see how well you understand the power of Solid's router. ✨",
+    difficulty: 3,
+    questionCount: 5,
+    questions: [
+      {
+        difficulty: 1,
+        tag: "solid-router",
+        question:
+          "What is the primary function of the `Router` component in SolidJS applications?",
+        options: [
+          {
+            text: "To manage navigation and rendering by defining routes using JSX or objects.",
+            correct: true,
+            explanation:
+              "The `Router` component is the foundation for routing in SolidJS applications. It enables the definition of routes using JSX or objects, allowing for seamless navigation and rendering of different components based on the current URL.",
+          },
+          {
+            text: "To handle data fetching and API requests within the application.",
+            correct: false,
+            explanation:
+              "Data fetching and API requests are typically handled by other components or libraries in SolidJS applications, not specifically the `Router` component.",
+          },
+          {
+            text: "To provide state management capabilities for the application.",
+            correct: false,
+            explanation:
+              "State management in SolidJS applications is often handled using signals or other state management libraries, not directly by the `Router` component.",
+          },
+          {
+            text: "To render the main layout of the application.",
+            correct: false,
+            explanation:
+              "While the `Router` component can be used to render the main layout, its primary function is to manage navigation and rendering of routes.",
+          },
+        ],
+      },
+      {
+        difficulty: 2,
+        tag: "solid-router",
+        question:
+          "How do you define a route in SolidJS using the `Route` component?",
+        options: [
+          {
+            text: "By specifying a `path` prop and a `component` prop to render at that path.",
+            correct: true,
+            explanation:
+              "The `Route` component in SolidJS requires a `path` prop to define the URL path it should match, and a `component` prop to specify the component to render when the path is matched.",
+          },
+          {
+            text: "By using the `useNavigate` hook to programmatically navigate to different routes.",
+            correct: false,
+            explanation:
+              "The `useNavigate` hook is used for programmatic navigation, not for defining routes. Routes are defined using the `Route` component.",
+          },
+          {
+            text: "By creating a custom router component that handles the routing logic.",
+            correct: false,
+            explanation:
+              "While you can create custom router components, the standard way to define routes in SolidJS is by using the built-in `Route` component.",
+          },
+          {
+            text: "By configuring the `routes` object in the main application component.",
+            correct: false,
+            explanation:
+              "SolidJS does not use a central `routes` object for defining routes. Routes are defined inline using the `Route` component.",
+          },
+        ],
+      },
+      {
+        difficulty: 3,
+        tag: "solid-router",
+        question:
+          "What is the purpose of the `useParams` hook in SolidJS routing?",
+        options: [
+          {
+            text: "To access dynamic route parameters within a component.",
+            correct: true,
+            explanation:
+              "The `useParams` hook provides a way to retrieve the dynamic parameters from the current URL, allowing components to access and utilize those parameters in their rendering or logic.",
+          },
+          {
+            text: "To define the parameters that a route should accept.",
+            correct: false,
+            explanation:
+              "Route parameters are defined in the `path` prop of the `Route` component, not using the `useParams` hook.",
+          },
+          {
+            text: "To navigate to a different route with specified parameters.",
+            correct: false,
+            explanation:
+              "Navigation to different routes is done using the `useNavigate` hook or the `<A>` component, not `useParams`.",
+          },
+          {
+            text: "To preload data for a route based on its parameters.",
+            correct: false,
+            explanation:
+              "Data preloading is handled by the `preload` function in the `Route` component, not using the `useParams` hook.",
+          },
+        ],
+      },
+      {
+        difficulty: 4,
+        tag: "solid-router",
+        question:
+          "How can you implement lazy loading for route components in SolidJS?",
+        options: [
+          {
+            text: "By using the `lazy` function to import components only when they are needed.",
+            correct: true,
+            explanation:
+              "The `lazy` function in SolidJS allows you to defer the loading of route components until they are actually navigated to, improving initial load performance.",
+          },
+          {
+            text: "By specifying the `lazy` prop on the `Route` component.",
+            correct: false,
+            explanation:
+              "There is no `lazy` prop on the `Route` component. Lazy loading is achieved using the `lazy` function to import components.",
+          },
+          {
+            text: "By defining a separate route configuration for lazy-loaded components.",
+            correct: false,
+            explanation:
+              "Lazy-loaded components are defined within the same route configuration as other components, using the `lazy` function to import them.",
+          },
+          {
+            text: "By manually importing the component when the route is navigated to.",
+            correct: false,
+            explanation:
+              "Manual importing would defeat the purpose of lazy loading. The `lazy` function handles the dynamic importing of components.",
+          },
+        ],
+      },
+      {
+        difficulty: 5,
+        tag: "solid-router",
+        question:
+          "What is the purpose of the `preload` function in SolidJS routing?",
+        options: [
+          {
+            text: "To initiate data fetching in parallel with route loading.",
+            correct: true,
+            explanation:
+              "The `preload` function allows you to start fetching data for a route as soon as the route is navigated to, or even earlier when the link is hovered, ensuring that the data is readily available when the component renders.",
+          },
+          {
+            text: "To define the loading state of a route component.",
+            correct: false,
+            explanation:
+              "The loading state of a route component is typically managed within the component itself or using Suspense boundaries, not by the `preload` function.",
+          },
+          {
+            text: "To handle authentication and authorization for a route.",
+            correct: false,
+            explanation:
+              "Authentication and authorization are usually handled by separate middleware or components, not specifically within the `preload` function.",
+          },
+          {
+            text: "To render a fallback component while the route is loading.",
+            correct: false,
+            explanation:
+              "Fallback components during route loading are typically handled using Suspense boundaries, not by the `preload` function.",
+          },
+        ],
+      },
+      {
+        difficulty: 1,
+        tag: "solid-router",
+        question:
+          "What is the primary function of the `Router` component in SolidJS applications?",
+        options: [
+          {
+            text: "To manage navigation and rendering by defining routes using JSX or objects.",
+            correct: true,
+            explanation:
+              "The `Router` component is the foundation for routing in SolidJS applications. It enables the definition of routes using JSX or objects, allowing for seamless navigation and rendering of different components based on the current URL.",
+          },
+          {
+            text: "To handle data fetching and API requests within the application.",
+            correct: false,
+            explanation:
+              "Data fetching and API requests are typically handled by other components or libraries in SolidJS applications, not specifically the `Router` component.",
+          },
+          {
+            text: "To provide state management capabilities for the application.",
+            correct: false,
+            explanation:
+              "State management in SolidJS applications is often handled using signals or other state management libraries, not directly by the `Router` component.",
+          },
+          {
+            text: "To render the main layout of the application.",
+            correct: false,
+            explanation:
+              "While the `Router` component can be used to render the main layout, its primary function is to manage navigation and rendering of routes.",
+          },
+        ],
+      },
+      {
+        difficulty: 2,
+        tag: "solid-router",
+        question:
+          "How do you define a route in SolidJS using the `Route` component?",
+        options: [
+          {
+            text: "By specifying a `path` prop and a `component` prop to render at that path.",
+            correct: true,
+            explanation:
+              "The `Route` component in SolidJS requires a `path` prop to define the URL path it should match, and a `component` prop to specify the component to render when the path is matched.",
+          },
+          {
+            text: "By using the `useNavigate` hook to programmatically navigate to different routes.",
+            correct: false,
+            explanation:
+              "The `useNavigate` hook is used for programmatic navigation, not for defining routes. Routes are defined using the `Route` component.",
+          },
+          {
+            text: "By creating a custom router component that handles the routing logic.",
+            correct: false,
+            explanation:
+              "While you can create custom router components, the standard way to define routes in SolidJS is by using the built-in `Route` component.",
+          },
+          {
+            text: "By configuring the `routes` object in the main application component.",
+            correct: false,
+            explanation:
+              "SolidJS does not use a central `routes` object for defining routes. Routes are defined inline using the `Route` component.",
+          },
+        ],
+      },
+      {
+        difficulty: 3,
+        tag: "solid-router",
+        question:
+          "What is the purpose of the `useParams` hook in SolidJS routing?",
+        options: [
+          {
+            text: "To access dynamic route parameters within a component.",
+            correct: true,
+            explanation:
+              "The `useParams` hook provides a way to retrieve the dynamic parameters from the current URL, allowing components to access and utilize those parameters in their rendering or logic.",
+          },
+          {
+            text: "To define the parameters that a route should accept.",
+            correct: false,
+            explanation:
+              "Route parameters are defined in the `path` prop of the `Route` component, not using the `useParams` hook.",
+          },
+          {
+            text: "To navigate to a different route with specified parameters.",
+            correct: false,
+            explanation:
+              "Navigation to different routes is done using the `useNavigate` hook or the `<A>` component, not `useParams`.",
+          },
+          {
+            text: "To preload data for a route based on its parameters.",
+            correct: false,
+            explanation:
+              "Data preloading is handled by the `preload` function in the `Route` component, not using the `useParams` hook.",
+          },
+        ],
+      },
+      {
+        difficulty: 4,
+        tag: "solid-router",
+        question:
+          "How can you implement lazy loading for route components in SolidJS?",
+        options: [
+          {
+            text: "By using the `lazy` function to import components only when they are needed.",
+            correct: true,
+            explanation:
+              "The `lazy` function in SolidJS allows you to defer the loading of route components until they are actually navigated to, improving initial load performance.",
+          },
+          {
+            text: "By specifying the `lazy` prop on the `Route` component.",
+            correct: false,
+            explanation:
+              "There is no `lazy` prop on the `Route` component. Lazy loading is achieved using the `lazy` function to import components.",
+          },
+          {
+            text: "By defining a separate route configuration for lazy-loaded components.",
+            correct: false,
+            explanation:
+              "Lazy-loaded components are defined within the same route configuration as other components, using the `lazy` function to import them.",
+          },
+          {
+            text: "By manually importing the component when the route is navigated to.",
+            correct: false,
+            explanation:
+              "Manual importing would defeat the purpose of lazy loading. The `lazy` function handles the dynamic importing of components.",
+          },
+        ],
+      },
+      {
+        difficulty: 5,
+        tag: "solid-router",
+        question:
+          "What is the purpose of the `preload` function in SolidJS routing?",
+        options: [
+          {
+            text: "To initiate data fetching in parallel with route loading.",
+            correct: true,
+            explanation:
+              "The `preload` function allows you to start fetching data for a route as soon as the route is navigated to, or even earlier when the link is hovered, ensuring that the data is readily available when the component renders.",
+          },
+          {
+            text: "To define the loading state of a route component.",
+            correct: false,
+            explanation:
+              "The loading state of a route component is typically managed within the component itself or using Suspense boundaries, not by the `preload` function.",
+          },
+          {
+            text: "To handle authentication and authorization for a route.",
+            correct: false,
+            explanation:
+              "Authentication and authorization are usually handled by separate middleware or components, not specifically within the `preload` function.",
+          },
+          {
+            text: "To render a fallback component while the route is loading.",
+            correct: false,
+            explanation:
+              "Fallback components during route loading are typically handled using Suspense boundaries, not by the `preload` function.",
+          },
+        ],
+      },
+    ],
+    result: [
+      {
+        score: [0, 1],
+        title: "Routing Rookie 😅",
+        feedback:
+          "Looks like you're just starting your SolidJS routing journey. Don't worry, keep exploring the docs and you'll master it in no time! 💪",
+      },
+      {
+        score: [2, 3],
+        title: "Routing Apprentice 🤔",
+        feedback:
+          "You've got a good grasp of the basics! Keep practicing and experimenting with different routing scenarios to become a true routing expert. 🤓",
+      },
+      {
+        score: [4, 4],
+        title: "Routing Pro 😎",
+        feedback:
+          "Impressive! You've clearly spent some time with SolidJS routing and it shows. You're well on your way to mastering the art of navigation and data flow. 🎉",
+      },
+      {
+        score: [5, 5],
+        title: "Routing Grandmaster 🤯",
+        feedback:
+          "Wow! You're a SolidJS routing wizard! 🧙‍♂️ Your understanding of routes, parameters, lazy loading, and preloading is truly remarkable. 🌟",
+      },
+    ],
+  },
 ] as Challenge[];
